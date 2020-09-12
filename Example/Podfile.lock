@@ -1,0 +1,16 @@
+PODS:
+  - JFTControllerLoader (0.0.1)
+
+DEPENDENCIES:
+  - JFTControllerLoader (from `../`)
+
+EXTERNAL SOURCES:
+  JFTControllerLoader:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JFTControllerLoader: bc44440c45fed6ce2f6cbc6a0fdc190a5465d2bc
+
+PODFILE CHECKSUM: 1f392662a6928dd9b1f28bc920a8ab09c7e231e4
+
+COCOAPODS: 1.9.3
