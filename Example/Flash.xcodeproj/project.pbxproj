@@ -106,7 +106,6 @@
 				2DF50CE60B9BAED99EE99D10 /* Pods-FlashTests.debug.xcconfig */,
 				4542EAA47D803D3CAFD0EF08 /* Pods-FlashTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
