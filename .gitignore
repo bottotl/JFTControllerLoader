@@ -1,0 +1,8 @@
+Example/Pods/*
+.DS_Store
+Flash.xcodeproj/xcuserdata/*
+Flash.xcworkspace/xcuserdata/*
+xcuserdata
+Example/Pods/
+Example/Podfile.lock
+Example/Flash.xcodeproj/xcuserdata/yulintao.xcuserdatad/xcschemes/xcschememanagement.plist
