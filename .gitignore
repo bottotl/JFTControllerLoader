@@ -1,4 +1,5 @@
 Example/Pods/*
+Example/Flash.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 .DS_Store
 Example/Flash.xcodeproj/xcuserdata/*
 Example/Flash.xcworkspace/xcuserdata/*
