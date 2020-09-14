@@ -26,10 +26,16 @@
     if (!block) {
         return [BFTask taskWithResult:@(YES)];
     }
-    
+    __auto_type iBlock = ^(void) {
+        CFTimeInterval startTime = CACurrentMediaTime();
+        if (block) {
+            block();
+        }
+        NSLog(@"cost %@ms", @((CACurrentMediaTime() - startTime) * 1000) );
+    };
     BFTaskCompletionSource *tcs = [BFTaskCompletionSource taskCompletionSource];
     [self.pool.mainQueue addOperationWithBlock:^{
-        block();
+        iBlock();
         [tcs setResult:@(YES)];
     }];
     return tcs.task;
@@ -41,11 +47,25 @@
 }
 
 - (void)addAsynSerialBlock:(void (^)(void))block {
-    [self.pool.asynSerialQueue addOperationWithBlock:block];
+    __auto_type iBlock = ^(void) {
+        CFTimeInterval startTime = CACurrentMediaTime();
+        if (block) {
+            block();
+        }
+        NSLog(@"cost %@ms", @((CACurrentMediaTime() - startTime) * 1000) );
+    };
+    [self.pool.asynSerialQueue addOperationWithBlock:iBlock];
 }
 
 - (void)addAsynCurrentBlock:(void (^)(void))block {
-    [self.pool.asynCurrentQueue addOperationWithBlock:block];
+    __auto_type iBlock = ^(void) {
+        CFTimeInterval startTime = CACurrentMediaTime();
+        if (block) {
+            block();
+        }
+        NSLog(@"cost %@ms", @((CACurrentMediaTime() - startTime) * 1000) );
+    };
+    [self.pool.asynCurrentQueue addOperationWithBlock:iBlock];
 }
 
 @end
