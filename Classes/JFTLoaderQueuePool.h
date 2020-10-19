@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedPool;
 
 @property (nonatomic) NSOperationQueue *mainQueue;
+@property (nonatomic) NSOperationQueue *lowPriorityMainQueue;
 @property (nonatomic) NSOperationQueue *asynSerialQueue;
 @property (nonatomic) NSOperationQueue *asynCurrentQueue;
 

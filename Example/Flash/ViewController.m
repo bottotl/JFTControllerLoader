@@ -38,6 +38,12 @@
         }];
     }
     
+    for (int i = 0; i < 10000; i++) {
+        [self.loader addLowPrioritBlock:^{
+            [weakSelf lowPrioritWork:i];
+        }];
+    }
+    
     [[BFTask taskForCompletionOfAllTasks:@[task1, task2]] continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
         [weakSelf.loader markAsRequiredTaskFinished];
         return t;
@@ -67,6 +73,11 @@
 
 - (void)asyncCurrentWork:(NSUInteger)i {
     NSLog(@"[CurrentWork] - %@", @(i));
+}
+
+- (void)lowPrioritWork:(NSUInteger)i {
+    [NSThread sleepForTimeInterval:0.016];
+    NSLog(@"[😊lowPrioritWork] - %@", @(i));
 }
 
 @end

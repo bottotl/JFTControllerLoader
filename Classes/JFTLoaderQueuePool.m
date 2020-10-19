@@ -21,6 +21,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         _mainQueue = [NSOperationQueue mainQueue];
+        _lowPriorityMainQueue = [NSOperationQueue mainQueue];
         _asynSerialQueue = [NSOperationQueue new];
         _asynSerialQueue.maxConcurrentOperationCount = 1;
         _asynCurrentQueue = [NSOperationQueue new];

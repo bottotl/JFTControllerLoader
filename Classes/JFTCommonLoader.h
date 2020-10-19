@@ -12,12 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JFTCommonLoader : NSObject
 
-- (BFTask *)addRequiredBlock:(void (^)(void))block;
+- (BFTask *)addRequiredBlock:(void(^)(void))block;
 
 - (void)markAsRequiredTaskFinished;
 
-- (void)addAsynSerialBlock:(void (^)(void))block;
-- (void)addAsynCurrentBlock:(void (^)(void))block;
+- (void)addLowPrioritBlock:(void(^)(void))block;
+
+- (void)addAsynSerialBlock:(void(^)(void))block;
+- (void)addAsynCurrentBlock:(void(^)(void))block;
 
 @end
 
